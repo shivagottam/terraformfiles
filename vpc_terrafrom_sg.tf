@@ -1,8 +1,5 @@
 provider "aws" {
-  access_key = "AKIAUFITGSV6OWNI34E7"
-
-  secret_key = "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"
-
+  
   region     = "ap-south-1"
 }
 resource "aws_vpc" "vpc" {
