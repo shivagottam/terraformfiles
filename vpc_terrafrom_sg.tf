@@ -10,7 +10,7 @@ resource "aws_vpc" "vpc" {
   instance_tenancy = "default"
 
   tags = {
-    Name = "demovpc"
+    Name = "shiva_vpc"
   }
 }
 resource "aws_subnet" "Pub" {
