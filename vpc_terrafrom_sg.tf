@@ -1,4 +1,7 @@
 provider "aws" {
+  access_key = "AKIAUFITGSV6OWNI34E7"
+
+  secret_key = "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"
 
   region     = "ap-south-1"
 }
@@ -138,4 +141,31 @@ resource "aws_instance" "ubuntu2" {
     Name = "apache_server"
   }
 
+}
+resource "aws_instance" "ubuntu_3" {
+  ami  = "ami-0c1a7f89451184c8b"
+  instance_type = "t3.micro"
+      user_data = <<-EOF
+      #!/bin/bash
+      sudo apt update
+      sudo apt install -y apache2
+      EOF
+  associate_public_ip_address = true
+  subnet_id = aws_subnet.Pub.id
+  vpc_security_group_ids = [aws_security_group.sg.id]
+  key_name               = "devops"
+ tags = {
+    Name = "k8worker_server"
+  }
+}
+resource "aws_instance" "ubuntu_4" {
+  ami  = "ami-0c1a7f89451184c8b"
+  instance_type = "t3.micro"
+  associate_public_ip_address = true
+  subnet_id = aws_subnet.Pub.id
+  vpc_security_group_ids = [aws_security_group.sg.id]
+  key_name               = "devops"
+ tags = {
+    Name = "k8master_server"
+  }
 }
