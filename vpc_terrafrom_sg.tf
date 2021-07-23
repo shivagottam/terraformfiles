@@ -88,7 +88,7 @@ resource "aws_instance" "ubuntu_1" {
   associate_public_ip_address = true
   subnet_id = aws_subnet.Pub.id
   vpc_security_group_ids = [aws_security_group.sg.id]
-  key_name               = "devops"
+  key_name               = "pullarao"
  tags = {
     Name = "ansible_server"
   }
@@ -136,7 +136,7 @@ resource "aws_instance" "ubuntu2" {
   associate_public_ip_address = true
   subnet_id = aws_subnet.Pub.id
   vpc_security_group_ids = [aws_security_group.sg_1.id]
-  key_name               = "devops"
+  key_name               = "pullarao"
  tags = {
     Name = "apache_server"
   }
@@ -153,7 +153,7 @@ resource "aws_instance" "ubuntu_3" {
   associate_public_ip_address = true
   subnet_id = aws_subnet.Pub.id
   vpc_security_group_ids = [aws_security_group.sg.id]
-  key_name               = "devops"
+  key_name               = "pullarao"
  tags = {
     Name = "k8worker_server"
   }
@@ -164,7 +164,7 @@ resource "aws_instance" "ubuntu_4" {
   associate_public_ip_address = true
   subnet_id = aws_subnet.Pub.id
   vpc_security_group_ids = [aws_security_group.sg.id]
-  key_name               = "devops"
+  key_name               = "pullarao"
  tags = {
     Name = "k8master_server"
   }
