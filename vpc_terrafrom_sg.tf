@@ -19,7 +19,7 @@ resource "aws_vpc" "vpc" {
   instance_tenancy = "default"
 
   tags = {
-    Name = "shiva_vpc"
+    Name = "shiva_vpc_1"
   }
 }
 resource "aws_subnet" "Pub" {
